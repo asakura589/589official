@@ -1,0 +1,1326 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>麻倉こはく Official Site</title>
+
+<meta
+    name="description"
+    content="麻倉こはく Official Site"
+/>
+
+
+<style>
+
+/* ========================================
+   基本設定
+======================================== */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+
+    background: #fff7fb;
+
+    color: #333;
+
+    font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "Helvetica Neue",
+        "Hiragino Kaku Gothic ProN",
+        "Yu Gothic",
+        Meiryo,
+        sans-serif;
+}
+
+a {
+    color: inherit;
+}
+
+button {
+    font-family: inherit;
+}
+
+.container {
+    width: 90%;
+
+    max-width: 1000px;
+
+    margin: 0 auto;
+}
+
+
+/* ========================================
+   HEADER
+======================================== */
+
+header {
+    padding: 35px 0 20px;
+}
+
+.logo {
+    font-size: 24px;
+
+    font-weight: bold;
+
+    letter-spacing: 0.05em;
+}
+
+.logo-sub {
+    margin-top: 5px;
+
+    color: #999;
+
+    font-size: 12px;
+
+    letter-spacing: 0.15em;
+}
+
+
+/* ========================================
+   NAVIGATION
+======================================== */
+
+.navigation {
+    position: sticky;
+
+    top: 0;
+
+    z-index: 100;
+
+    margin-top: 10px;
+
+    padding: 10px 0;
+
+    background: rgba(255, 247, 251, 0.92);
+
+    backdrop-filter: blur(10px);
+
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.nav-inner {
+    display: flex;
+
+    justify-content: center;
+
+    gap: 8px;
+
+    overflow-x: auto;
+
+    scrollbar-width: none;
+}
+
+.nav-inner::-webkit-scrollbar {
+    display: none;
+}
+
+.nav-button {
+    flex-shrink: 0;
+
+    border: none;
+
+    background: transparent;
+
+    color: #999;
+
+    padding: 10px 20px;
+
+    border-radius: 50px;
+
+    font-size: 13px;
+
+    font-weight: bold;
+
+    letter-spacing: 0.08em;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+.nav-button:hover {
+    color: #ff7fbf;
+}
+
+.nav-button.active {
+    background: #ff7fbf;
+
+    color: #fff;
+
+    box-shadow:
+        0 5px 15px rgba(255, 127, 191, 0.25);
+}
+
+
+/* ========================================
+   PAGE CONTENT
+======================================== */
+
+.page {
+    display: none;
+
+    padding-top: 25px;
+
+    animation: fadeIn 0.3s ease;
+}
+
+.page.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+/* ========================================
+   PROFILE
+======================================== */
+
+.profile {
+    display: flex;
+
+    align-items: center;
+
+    gap: 30px;
+
+    padding: 30px;
+
+    background: #ffffff;
+
+    border-radius: 20px;
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.06);
+}
+
+
+/* プロフィール画像 */
+
+.profile-image {
+    width: 150px;
+
+    height: 150px;
+
+    flex-shrink: 0;
+
+    border-radius: 20px;
+
+    overflow: hidden;
+
+    background: #ffdcec;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    color: #ff7fbf;
+
+    font-size: 14px;
+
+    text-align: center;
+}
+
+.profile-image img {
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+}
+
+
+/* プロフィール本文 */
+
+.profile-name {
+    margin: 0;
+
+    font-size: 26px;
+
+    font-weight: bold;
+}
+
+.profile-name-en {
+    margin-top: 5px;
+
+    color: #999;
+
+    font-size: 13px;
+
+    letter-spacing: 0.1em;
+}
+
+.profile-text {
+    margin-top: 15px;
+
+    color: #666;
+
+    line-height: 1.8;
+}
+
+
+/* ========================================
+   TAG
+======================================== */
+
+.tags {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 8px;
+
+    margin-top: 18px;
+}
+
+.tag {
+    padding: 6px 12px;
+
+    background: #ffdcec;
+
+    border-radius: 50px;
+
+    color: #d95d9b;
+
+    font-size: 13px;
+}
+
+
+/* ========================================
+   SNS
+======================================== */
+
+.sns {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 10px;
+
+    margin-top: 20px;
+}
+
+.sns a {
+    display: inline-block;
+
+    padding: 9px 18px;
+
+    border-radius: 10px;
+
+    color: #fff;
+
+    text-decoration: none;
+
+    font-size: 14px;
+
+    font-weight: bold;
+
+    transition: 0.2s;
+}
+
+.sns a:hover {
+    opacity: 0.75;
+
+    transform: translateY(-2px);
+}
+
+.x {
+    background: #111;
+}
+
+.youtube {
+    background: #ff0000;
+}
+
+.twitch {
+    background: #9146ff;
+}
+
+
+/* ========================================
+   SECTION TITLE
+======================================== */
+
+.section-title {
+    margin: 0;
+
+    font-size: 24px;
+}
+
+.section-subtitle {
+    margin-top: 6px;
+
+    color: #999;
+
+    font-size: 12px;
+
+    letter-spacing: 0.1em;
+}
+
+
+/* ========================================
+   PORTFOLIO
+======================================== */
+
+.portfolio-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 18px;
+
+    margin-top: 25px;
+}
+
+.portfolio-item {
+
+    overflow: hidden;
+
+    background: #fff;
+
+    border-radius: 16px;
+
+    box-shadow:
+        0 8px 25px rgba(0, 0, 0, 0.05);
+
+    transition: 0.2s;
+}
+
+.portfolio-item:hover {
+
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 12px 30px rgba(0, 0, 0, 0.1);
+}
+
+
+/* ポートフォリオ画像 */
+
+.portfolio-image {
+
+    width: 100%;
+
+    aspect-ratio: 16 / 9;
+
+    background: #ffdcec;
+
+    overflow: hidden;
+}
+
+.portfolio-image img {
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+}
+
+
+/* ポートフォリオ情報 */
+
+.portfolio-info {
+
+    padding: 15px;
+}
+
+.portfolio-info h3 {
+
+    margin: 0;
+
+    font-size: 16px;
+}
+
+.portfolio-info p {
+
+    margin: 8px 0 0;
+
+    color: #777;
+
+    font-size: 13px;
+
+    line-height: 1.6;
+}
+
+
+/* ========================================
+   YouTube VIDEO
+======================================== */
+
+.youtube-thumbnail {
+
+    position: relative;
+
+    width: 100%;
+
+    aspect-ratio: 16 / 9;
+
+    overflow: hidden;
+
+    background: #222;
+
+    cursor: pointer;
+}
+
+.youtube-thumbnail img {
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+
+    transition: 0.3s;
+}
+
+.youtube-thumbnail:hover img {
+
+    transform: scale(1.05);
+
+    opacity: 0.8;
+}
+
+
+/* 再生ボタン */
+
+.play-button {
+
+    position: absolute;
+
+    top: 50%;
+
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+
+    width: 60px;
+
+    height: 42px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background: rgba(255, 0, 0, 0.9);
+
+    border-radius: 12px;
+
+    color: #fff;
+
+    font-size: 20px;
+
+    padding-left: 3px;
+
+    pointer-events: none;
+
+    transition: 0.2s;
+}
+
+.youtube-thumbnail:hover .play-button {
+
+    transform:
+        translate(-50%, -50%)
+        scale(1.1);
+}
+
+
+/* 再生時のYouTube */
+
+.youtube-thumbnail iframe {
+
+    width: 100%;
+
+    height: 100%;
+
+    border: 0;
+
+    display: block;
+}
+
+
+/* ========================================
+   PHOTO GALLERY
+======================================== */
+
+.gallery {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 15px;
+
+    margin-top: 25px;
+}
+
+.gallery-item {
+
+    width: 100%;
+
+    aspect-ratio: 1 / 1;
+
+    overflow: hidden;
+
+    background: #ffdcec;
+
+    border-radius: 14px;
+
+    cursor: pointer;
+}
+
+.gallery-item img {
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+
+    transition: 0.3s;
+}
+
+.gallery-item:hover img {
+
+    transform: scale(1.05);
+}
+
+
+/* ========================================
+   CONTACT
+======================================== */
+
+.contact {
+
+    padding: 40px 30px;
+
+    background: #fff;
+
+    border-radius: 20px;
+
+    text-align: center;
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+.contact p {
+
+    color: #666;
+
+    line-height: 1.8;
+}
+
+.contact-button {
+
+    display: inline-block;
+
+    margin-top: 15px;
+
+    padding: 12px 25px;
+
+    background: #ff7fbf;
+
+    border-radius: 10px;
+
+    color: #fff;
+
+    text-decoration: none;
+
+    font-weight: bold;
+
+    transition: 0.2s;
+}
+
+.contact-button:hover {
+
+    opacity: 0.8;
+
+    transform: translateY(-2px);
+}
+
+
+/* ========================================
+   FOOTER
+======================================== */
+
+footer {
+
+    margin-top: 60px;
+
+    padding: 30px 0;
+
+    border-top: 1px solid #f0dce7;
+
+    color: #999;
+
+    font-size: 12px;
+
+    text-align: center;
+}
+
+
+/* ========================================
+   スマートフォン
+======================================== */
+
+@media (max-width: 700px) {
+
+    .profile {
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        padding: 20px;
+    }
+
+    .profile-image {
+
+        width: 120px;
+
+        height: 120px;
+    }
+
+    .profile-name {
+
+        font-size: 22px;
+    }
+
+    .nav-inner {
+
+        justify-content: flex-start;
+    }
+
+    .nav-button {
+
+        padding: 9px 16px;
+    }
+
+    .portfolio-grid {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+        gap: 12px;
+    }
+
+    .gallery {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+        gap: 10px;
+    }
+
+}
+
+
+/* ========================================
+   小さいスマホ
+======================================== */
+
+@media (max-width: 400px) {
+
+    .container {
+
+        width: 92%;
+    }
+
+    .portfolio-grid {
+
+        grid-template-columns: 1fr;
+    }
+
+    .profile {
+
+        padding: 16px;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<div class="container">
+
+
+<!-- ========================================
+     HEADER
+======================================== -->
+
+<header>
+
+    <div class="logo">
+        麻倉こはく
+    </div>
+
+    <div class="logo-sub">
+        KOHaku ASAKURA / OFFICIAL SITE
+    </div>
+
+</header>
+
+
+
+<!-- ========================================
+     NAVIGATION
+======================================== -->
+
+<nav class="navigation">
+
+    <div class="nav-inner">
+
+        <button
+            class="nav-button active"
+            data-page="profile"
+        >
+            PROFILE
+        </button>
+
+        <button
+            class="nav-button"
+            data-page="video"
+        >
+            VIDEO
+        </button>
+
+        <button
+            class="nav-button"
+            data-page="photo"
+        >
+            PHOTO
+        </button>
+
+        <button
+            class="nav-button"
+            data-page="contact"
+        >
+            CONTACT
+        </button>
+
+    </div>
+
+</nav>
+
+
+
+<!-- ========================================
+     PROFILE PAGE
+======================================== -->
+
+<main
+    id="profile"
+    class="page active"
+>
+
+
+    <section class="profile">
+
+
+        <div class="profile-image">
+            <img src="589official/images/avatar.jpg" alt="麻倉こはく">
+        </div>
+
+
+        <div>
+
+            <h1 class="profile-name">
+                麻倉 こはく
+            </h1>
+
+            <div class="profile-name-en">
+                Kohaku Asakura
+            </div>
+
+
+            <p class="profile-text">
+
+                映像クリエイター・ポートレート撮影など、
+                クリエイティブを中心に活動。<br>
+
+                夢を持つ人に光を分け与えたい。
+                映像で誰かのためになりたいだけ。
+
+            </p>
+
+
+            <div class="hobby-title"> 趣味 </div>
+            <div class="tags">
+
+                <span class="tag">
+                    映像
+                </span>
+
+                <span class="tag">
+                    写真
+                </span>
+
+                <span class="tag">
+                    最新機材
+                </span>
+
+                <span class="tag">
+                    サイクリング
+                </span>
+
+            </div>
+
+
+            <div class="sns">
+
+                <a
+                    class="x"
+                    href="https://x.com/MM58Q"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    X
+                </a>
+
+
+                <a
+                    class="youtube"
+                    href="https://www.youtube.com/@589official"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    YouTube
+                </a>
+
+
+                <a
+                    class="twitch"
+                    href="https://www.twitch.tv/58qpro"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    Twitch
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+
+<!-- ========================================
+     VIDEO PAGE
+======================================== -->
+
+<main
+    id="video"
+    class="page"
+>
+
+    <section>
+
+        <h2 class="section-title">
+            映像制作
+        </h2>
+
+        <div class="section-subtitle">
+            VIDEO PORTFOLIO
+        </div>
+
+
+        <div class="portfolio-grid">
+
+
+            <!-- ====================================
+                 VIDEO 01
+            ===================================== -->
+
+            <article class="portfolio-item">
+
+                <div
+                    class="youtube-thumbnail"
+                    onclick="playYouTube(this)"
+                    data-video-id="ここにYouTubeの動画ID"
+                >
+
+                    <img
+                        src="https://img.youtube.com/vi/ここにYouTubeの動画ID/maxresdefault.jpg"
+                        alt="映像作品1"
+                    >
+
+                    <div class="play-button">
+                        ▶
+                    </div>
+
+                </div>
+
+                <div class="portfolio-info">
+
+                    <h3>
+                        VIDEO PROJECT 01
+                    </h3>
+
+                    <p>
+                        映像作品の説明をここに入れます。
+                    </p>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- ====================================
+                 VIDEO 02
+            ===================================== -->
+
+            <article class="portfolio-item">
+
+                <div
+                    class="youtube-thumbnail"
+                    onclick="playYouTube(this)"
+                    data-video-id="ここにYouTubeの動画ID"
+                >
+
+                    <img
+                        src="https://img.youtube.com/vi/ここにYouTubeの動画ID/maxresdefault.jpg"
+                        alt="映像作品2"
+                    >
+
+                    <div class="play-button">
+                        ▶
+                    </div>
+
+                </div>
+
+                <div class="portfolio-info">
+
+                    <h3>
+                        VIDEO PROJECT 02
+                    </h3>
+
+                    <p>
+                        映像作品の説明をここに入れます。
+                    </p>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- ====================================
+                 VIDEO 03
+            ===================================== -->
+
+            <article class="portfolio-item">
+
+                <div
+                    class="youtube-thumbnail"
+                    onclick="playYouTube(this)"
+                    data-video-id="ここにYouTubeの動画ID"
+                >
+
+                    <img
+                        src="https://img.youtube.com/vi/ここにYouTubeの動画ID/maxresdefault.jpg"
+                        alt="映像作品3"
+                    >
+
+                    <div class="play-button">
+                        ▶
+                    </div>
+
+                </div>
+
+                <div class="portfolio-info">
+
+                    <h3>
+                        VIDEO PROJECT 03
+                    </h3>
+
+                    <p>
+                        映像作品の説明をここに入れます。
+                    </p>
+
+                </div>
+
+            </article>
+
+
+        </div>
+
+    </section>
+
+</main>
+
+
+
+<!-- ========================================
+     PHOTO PAGE
+======================================== -->
+
+<main
+    id="photo"
+    class="page"
+>
+
+
+    <section>
+
+        <h2 class="section-title">
+            写真
+        </h2>
+
+        <div class="section-subtitle">
+            PHOTO PORTFOLIO
+        </div>
+
+
+        <div class="gallery">
+
+
+            <div class="gallery-item">
+
+                <!--
+                    <img
+                        src="images/photo1.jpg"
+                        alt="写真作品1"
+                    >
+                -->
+
+            </div>
+
+
+            <div class="gallery-item">
+
+            </div>
+
+
+            <div class="gallery-item">
+
+            </div>
+
+
+            <div class="gallery-item">
+
+            </div>
+
+
+            <div class="gallery-item">
+
+            </div>
+
+
+            <div class="gallery-item">
+
+            </div>
+
+
+            <div class="gallery-item">
+
+            </div>
+
+
+            <div class="gallery-item">
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+</main>
+
+
+
+<!-- ========================================
+     CONTACT PAGE
+======================================== -->
+
+<main
+    id="contact"
+    class="page"
+>
+
+
+    <section>
+
+        <div class="contact">
+
+            <h2 class="section-title">
+                CONTACT
+            </h2>
+
+            <div class="section-subtitle">
+                お問い合わせ
+            </div>
+
+
+            <p>
+
+                映像制作・撮影・編集などのご依頼、
+                その他お問い合わせはこちらから。
+
+            </p>
+
+
+            <a
+                class="contact-button"
+                href="mailto:support@589official.com"
+            >
+                メールでお問い合わせ
+            </a>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+
+<!-- ========================================
+     FOOTER
+======================================== -->
+
+<footer>
+
+    © 2026 Kohaku Asakura
+
+    <br>
+
+    All Rights Reserved.
+
+</footer>
+
+
+</div>
+
+
+
+<!-- ========================================
+     JAVASCRIPT
+======================================== -->
+
+<script>
+
+
+/* ========================================
+   タブ切り替え
+======================================== */
+
+const navButtons =
+    document.querySelectorAll(".nav-button");
+
+const pages =
+    document.querySelectorAll(".page");
+
+
+navButtons.forEach(button => {
+
+    button.addEventListener("click", () => {
+
+
+        /* -----------------------------
+           ボタンの状態
+        ----------------------------- */
+
+        navButtons.forEach(btn => {
+
+            btn.classList.remove("active");
+
+        });
+
+        button.classList.add("active");
+
+
+        /* -----------------------------
+           ページの切り替え
+        ----------------------------- */
+
+        const target =
+            button.dataset.page;
+
+
+        pages.forEach(page => {
+
+            page.classList.remove("active");
+
+        });
+
+
+        const targetPage =
+            document.getElementById(target);
+
+
+        if (targetPage) {
+
+            targetPage.classList.add("active");
+
+        }
+
+
+        /* -----------------------------
+           ページ上部へ
+        ----------------------------- */
+
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+
+    });
+
+});
+
+
+</script>
+
+
+</body>
+
+</html>
